@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GlowingCard } from "@/components/ui/glowing-card";
 import { Gift, MessageCircle } from "lucide-react";
 
 export default function Bonuses() {
@@ -12,41 +12,41 @@ export default function Bonuses() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <Card className="bg-card border-secondary/20 relative overflow-hidden group hover:border-secondary/50 transition-colors">
+          <GlowingCard className="bg-card relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
               <Gift className="w-32 h-32" />
             </div>
-            <CardHeader>
-              <CardTitle className="text-2xl flex items-center gap-3">
+            <div className="p-6">
+              <h3 className="text-2xl font-semibold leading-none tracking-tight flex items-center gap-3 mb-4">
                 <Gift className="text-secondary" /> Bonus #1: Trading Checklist
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                A printable PDF checklist to keep on your desk. Never miss a step in your trading routine again.
-                Ensure every trade meets your criteria before pulling the trigger.
-              </p>
-              <p className="mt-4 font-bold text-secondary">Value: $29 (FREE)</p>
-            </CardContent>
-          </Card>
+              </h3>
+              <div className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground">
+                  A printable PDF checklist to keep on your desk. Never miss a step in your trading routine again.
+                  Ensure every trade meets your criteria before pulling the trigger.
+                </p>
+                <p className="mt-4 font-bold text-secondary">Value: $29 (FREE)</p>
+              </div>
+            </div>
+          </GlowingCard>
 
-          <Card className="bg-card border-primary/20 relative overflow-hidden group hover:border-primary/50 transition-colors">
+          <GlowingCard className="bg-card relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
               <MessageCircle className="w-32 h-32" />
             </div>
-            <CardHeader>
-              <CardTitle className="text-2xl flex items-center gap-3">
+            <div className="p-6">
+              <h3 className="text-2xl font-semibold leading-none tracking-tight flex items-center gap-3 mb-4">
                 <MessageCircle className="text-primary" /> Bonus #2: Telegram Access
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Join our private community of traders. Share charts, discuss setups, and grow together.
-                Direct access to market updates and Q&A sessions.
-              </p>
-              <p className="mt-4 font-bold text-primary">Value: $99/year (FREE)</p>
-            </CardContent>
-          </Card>
+              </h3>
+              <div className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground">
+                  Join our private community of traders. Share charts, discuss setups, and grow together.
+                  Direct access to market updates and Q&A sessions.
+                </p>
+                <p className="mt-4 font-bold text-primary">Value: $99/year (FREE)</p>
+              </div>
+            </div>
+          </GlowingCard>
         </div>
       </div>
     </section>

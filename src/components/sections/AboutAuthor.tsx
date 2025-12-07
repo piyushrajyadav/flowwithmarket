@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, Award } from "lucide-react";
 import Image from "next/image";
+import { GlowingCard } from "@/components/ui/glowing-card";
 
 export default function AboutAuthor() {
   return (
@@ -24,7 +25,7 @@ export default function AboutAuthor() {
               {/* Placeholder for Author Image - Replace src with actual image */}
               <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
               <Image 
-                src="/placeholder-author.jpg" 
+                src="/bishnu.png" 
                 alt="Bishnugupta - Author"
                 fill
                 className="object-cover"
@@ -51,7 +52,7 @@ export default function AboutAuthor() {
           >
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-2">
-                Meet <span className="text-secondary">Bishnugupta</span>
+                Meet <span className="text-secondary">Bishnu gupta</span>
               </h2>
               <p className="text-xl text-primary font-medium flex items-center gap-2">
                 <Award className="w-5 h-5" />
@@ -76,10 +77,12 @@ export default function AboutAuthor() {
                 "Mentor to 1000+ Traders",
                 "Risk Management Expert"
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 bg-card/50 p-3 rounded-lg border border-border/50">
-                  <CheckCircle2 className="w-5 h-5 text-secondary shrink-0" />
-                  <span className="text-sm font-medium">{item}</span>
-                </div>
+                <GlowingCard key={i} className="p-3">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-secondary shrink-0" />
+                    <span className="text-sm font-medium">{item}</span>
+                  </div>
+                </GlowingCard>
               ))}
             </div>
 

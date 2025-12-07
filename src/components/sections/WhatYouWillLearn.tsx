@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GlowingCard } from "@/components/ui/glowing-card";
 import { motion } from "framer-motion";
 import { TrendingUp, Brain, BarChart3, ShieldCheck, Target, Zap } from "lucide-react";
 
@@ -59,17 +59,15 @@ export default function WhatYouWillLearn() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="bg-card/50 border-primary/10 hover:border-primary/50 transition-colors h-full">
-                <CardHeader>
+              <GlowingCard className="bg-card/50 h-full">
+                <div className="p-6">
                   <div className="mb-4 p-3 bg-background/50 w-fit rounded-xl border border-border">
                     {feature.icon}
                   </div>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
+                  <h3 className="text-xl font-semibold leading-none tracking-tight mb-2">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
+                </div>
+              </GlowingCard>
             </motion.div>
           ))}
         </div>
