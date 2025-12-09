@@ -174,57 +174,59 @@ export default function BookReader({ pdfUrl }: BookReaderProps) {
                     )}
 
                     {isReady && (
-                        /* @ts-ignore */
-                        <HTMLFlipBook
-                            key={`${pageWidth}-${pageHeight}`} // Force re-mount when dimensions change
-                            width={pageWidth}
-                            height={pageHeight}
-                            size="fixed"
-                            minWidth={100}
-                            maxWidth={2000}
-                            minHeight={100}
-                            maxHeight={2000}
-                            drawShadow={true}
-                            flippingTime={600}
-                            usePortrait={usePortrait}
-                            startZIndex={0}
-                            autoSize={false} // Disable autoSize to prevent shrinking
-                            maxShadowOpacity={0.3}
-                            showCover={true}
-                            mobileScrollSupport={true}
-                            clickEventForward={true}
-                            useMouseEvents={true}
-                            swipeDistance={30}
-                            showPageCorners={false}
-                            disableFlipByClick={false}
-                            className="demo-book shadow-2xl"
-                            style={{ margin: '0 auto' }}
-                            ref={bookRef}
-                        >
-                            {Array.from(new Array(numPages), (el, index) => (
-                                <Page key={`page_${index + 1}`} number={index + 1} className={currentTheme.bookBg}>
-                                    <div style={{
-                                        filter: currentTheme.pdfFilter,
-                                        mixBlendMode: theme === 'dark' ? 'normal' : 'normal',
-                                    }}
-                                        className="w-full h-full flex flex-col items-center justify-center overflow-hidden relative"
-                                    >
-                                        <PdfPage
-                                            pageNumber={index + 1}
-                                            width={pageWidth}
-                                            className="!bg-transparent flex justify-center items-center"
-                                            renderTextLayer={false}
-                                            renderAnnotationLayer={false}
-                                        />
+                        <Document file={pdfUrl} className="flex justify-center shadow-2xl">
+                            {/* @ts-ignore */}
+                            <HTMLFlipBook
+                                key={`${pageWidth}-${pageHeight}`} // Force re-mount when dimensions change
+                                width={pageWidth}
+                                height={pageHeight}
+                                size="fixed"
+                                minWidth={100}
+                                maxWidth={2000}
+                                minHeight={100}
+                                maxHeight={2000}
+                                drawShadow={true}
+                                flippingTime={600}
+                                usePortrait={usePortrait}
+                                startZIndex={0}
+                                autoSize={false} // Disable autoSize to prevent shrinking
+                                maxShadowOpacity={0.3}
+                                showCover={true}
+                                mobileScrollSupport={true}
+                                clickEventForward={true}
+                                useMouseEvents={true}
+                                swipeDistance={30}
+                                showPageCorners={false}
+                                disableFlipByClick={false}
+                                className="demo-book"
+                                style={{ margin: '0 auto' }}
+                                ref={bookRef}
+                            >
+                                {Array.from(new Array(numPages), (el, index) => (
+                                    <Page key={`page_${index + 1}`} number={index + 1} className={currentTheme.bookBg}>
+                                        <div style={{
+                                            filter: currentTheme.pdfFilter,
+                                            mixBlendMode: theme === 'dark' ? 'normal' : 'normal',
+                                        }}
+                                            className="w-full h-full flex flex-col items-center justify-center overflow-hidden relative"
+                                        >
+                                            <PdfPage
+                                                pageNumber={index + 1}
+                                                width={pageWidth}
+                                                className="!bg-transparent flex justify-center items-center"
+                                                renderTextLayer={false}
+                                                renderAnnotationLayer={false}
+                                            />
 
-                                        {/* Page Number */}
-                                        <div className={cn("absolute bottom-6 w-full text-center text-xs font-mono opacity-60 pointer-events-none", currentTheme.text)}>
-                                            - {index + 1} -
+                                            {/* Page Number */}
+                                            <div className={cn("absolute bottom-6 w-full text-center text-xs font-mono opacity-60 pointer-events-none", currentTheme.text)}>
+                                                - {index + 1} -
+                                            </div>
                                         </div>
-                                    </div>
-                                </Page>
-                            ))}
-                        </HTMLFlipBook>
+                                    </Page>
+                                ))}
+                            </HTMLFlipBook>
+                        </Document>
                     )}
                 </div>
 
