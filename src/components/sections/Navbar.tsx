@@ -15,8 +15,8 @@ export default function Navbar() {
         FLOW WITH MARKET
       </div>
       <div className="flex items-center gap-4">
-        <Link href="#pricing">
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-[0_0_15px_rgba(212,175,55,0.5)]">
+        <Link href="/book">
+          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-[0_0_15px_rgba(212,175,55,0.5)] cursor-pointer">
             Buy Now
           </Button>
         </Link>

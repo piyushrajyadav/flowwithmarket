@@ -15,7 +15,7 @@ export default function Hero() {
         <FloatingPaths position={-1} />
       </div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background opacity-50 pointer-events-none" />
-      
+
       <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -33,8 +33,8 @@ export default function Hero() {
             No hype. No guessing. Just pure market flow strategy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Link href="#pricing">
-              <Button size="lg" className="w-full sm:w-auto text-lg px-8 py-6 bg-primary text-primary-foreground hover:bg-[#22E07A] shadow-[0_0_20px_rgba(43,255,136,0.4)] transition-all hover:scale-105">
+            <Link href="/book">
+              <Button size="lg" className="w-full sm:w-auto text-lg px-8 py-6 bg-primary text-primary-foreground hover:bg-[#22E07A] shadow-[0_0_20px_rgba(43,255,136,0.4)] transition-all hover:scale-105 cursor-pointer">
                 Buy Now – Instant Access
               </Button>
             </Link>
@@ -52,8 +52,8 @@ export default function Hero() {
         >
           <div className="absolute inset-0 bg-gradient-to-tr from-secondary/20 to-transparent rounded-full blur-3xl opacity-30" />
           <div className="relative flex items-center justify-center transform hover:scale-105 transition-transform duration-500">
-            <Book 
-              title="Flow With Market" 
+            <Book
+              title="Flow With Market"
               width={240}
               color="hsl(146 100% 58%)" // Primary Green
               textColor="#041B12" // Dark Green Text

@@ -33,7 +33,7 @@ export default function SalesPopup() {
           className="fixed bottom-6 left-6 z-50 bg-card border border-primary/20 p-4 rounded-lg shadow-lg flex items-center gap-4 max-w-xs"
         >
           <Avatar className="h-10 w-10 border border-primary/50">
-            <AvatarImage src={`/placeholder-user.jpg`} />
+            <AvatarImage src={`https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 99)}.jpg`} />
             <AvatarFallback>U</AvatarFallback>
           </Avatar>
           <div>
